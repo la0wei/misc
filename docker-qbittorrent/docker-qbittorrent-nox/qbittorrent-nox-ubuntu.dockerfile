@@ -1,4 +1,4 @@
-FROM
+FROM ubuntu:18.04  
 
 RUN apt update && apt upgrade -y --no-install-recommends install \
     ca-certificates \
@@ -28,9 +28,10 @@ COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod a+x /usr/local/bin/docker-entrypoint.sh
  
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]
+WORKDIR /config
 
 # ports and volumes
 EXPOSE 6881 6881/udp 8080
-VOLUME /config /data
+VOLUME /config /qbdownload
 
 CMD ["qbittorrent-nox"]
