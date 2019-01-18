@@ -6,9 +6,9 @@ RUN apt update && apt upgrade -y \
     gpg \
     geoip-database \
     geoip-bin \
-  && apt install software-properties-common -qy  \
-  && add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -qy \ 
-  && apt update && apt install qbittorrent-nox -qy \
+  && apt install software-properties-common -y \
+  && add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -y \ 
+  && apt update && apt install qbittorrent-nox -y \
   && apt -y autoremove \
   && apt -y clean \
   &&  rm -rf \
