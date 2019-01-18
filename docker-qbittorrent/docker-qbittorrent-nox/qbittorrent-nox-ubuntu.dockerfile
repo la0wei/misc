@@ -1,12 +1,12 @@
 FROM ubuntu:18.04  
 
-RUN apt update && apt upgrade -y --no-install-recommends install \
+RUN apt update && apt upgrade -y \
     ca-certificates \
     curl \
     gpg \
     geoip-database \
     geoip-bin \
-  && apt install software-properties-common - qy  \
+  && apt install software-properties-common -qy  \
   && add-apt-repository ppa:qbittorrent-team/qbittorrent-stable -qy \ 
   && apt update && apt install qbittorrent-nox -qy \
   && apt -y autoremove \
